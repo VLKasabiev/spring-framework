@@ -12,7 +12,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class KafkaBookingService {
-
     private final List<BookingEvent> bookings = new ArrayList<>();
 
     public void add(BookingEvent event) {
