@@ -14,18 +14,10 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class KafkaCreateUserService {
-    private final KafkaUserRegistrationRepository kafkaUserRegistrationRepository;
 
     private final List<CreateUserEvent> users = new ArrayList<>();
 
     public void add(CreateUserEvent event) {
         users.add(event);
-    }
-
-    public Mono<KafkaUserRegistration> save(KafkaUserRegistration registration) {
-        log.info("Save method is calling!!!");
-        log.info("ID: " + registration.getId());
-        log.info("User ID: " + registration.getUserId());
-        return kafkaUserRegistrationRepository.save(registration);
     }
 }

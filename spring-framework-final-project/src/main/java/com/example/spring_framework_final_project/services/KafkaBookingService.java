@@ -12,7 +12,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class KafkaBookingService {
-    private final KafkaRoomBookingRepository bookingRepository;
 
     private final List<BookingEvent> bookings = new ArrayList<>();
 
@@ -20,7 +19,4 @@ public class KafkaBookingService {
         bookings.add(event);
     }
 
-    public Mono<KafkaRoomBooking> save(KafkaRoomBooking kafkaRoomBooking) {
-        return bookingRepository.save(kafkaRoomBooking);
-    }
 }
