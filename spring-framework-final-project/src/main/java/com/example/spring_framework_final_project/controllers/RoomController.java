@@ -1,7 +1,7 @@
 package com.example.spring_framework_final_project.controllers;
 
 import com.example.spring_framework_final_project.entities.Room;
-import com.example.spring_framework_final_project.mapper.room.RoomMapperDelegate;
+import com.example.spring_framework_final_project.mapper.room.RoomMapper;
 import com.example.spring_framework_final_project.filters.RoomFilter;
 import com.example.spring_framework_final_project.model.room.RoomResponse;
 import com.example.spring_framework_final_project.model.room.UpsertRoomRequest;
@@ -22,7 +22,7 @@ import java.util.List;
 @Slf4j
 public class RoomController {
     private final RoomService roomService;
-    private final RoomMapperDelegate roomMapper;
+    private final RoomMapper roomMapper;
 
     @GetMapping("/filter")
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")

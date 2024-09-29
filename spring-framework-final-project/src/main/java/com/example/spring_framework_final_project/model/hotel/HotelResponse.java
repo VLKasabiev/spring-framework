@@ -13,7 +13,7 @@ public class HotelResponse {
     private String title;
     private String city;
     private String address;
-    private Integer distanceFromCentre;
+    private Double distanceFromCentre;
     private Double rating;
     private Long numberOfRatings;
 }

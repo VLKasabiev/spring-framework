@@ -1,9 +1,7 @@
 package com.example.spring_framework_final_project.listener;
 
 import com.example.spring_framework_final_project.kafka.event.BookingEvent;
-import com.example.spring_framework_final_project.kafka.event.CreateUserEvent;
 import com.example.spring_framework_final_project.model.kafka.models.KafkaRoomBooking;
-import com.example.spring_framework_final_project.model.kafka.models.KafkaUserRegistration;
 import com.example.spring_framework_final_project.services.KafkaBookingService;
 import com.example.spring_framework_final_project.services.StatisticsService;
 import lombok.RequiredArgsConstructor;

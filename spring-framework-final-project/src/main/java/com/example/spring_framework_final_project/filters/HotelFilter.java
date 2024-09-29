@@ -1,6 +1,5 @@
 package com.example.spring_framework_final_project.filters;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +13,7 @@ public class HotelFilter {
     private String title;
     private String city;
     private String address;
-    private Integer maxDistanceFromCentre;
+    private Double maxDistanceFromCentre;
     private Double minRating;
     private Long maxNumberOfRatings;
 }

@@ -19,7 +19,7 @@ public class Hotel {
     private String city;
     private String address;
     @Column(name = "distance_from_centre")
-    private Integer distanceFromCentre;
+    private Double distanceFromCentre;
     private Double rating;
     @Column(name = "number_of_ratings")
     private Long numberOfRatings;

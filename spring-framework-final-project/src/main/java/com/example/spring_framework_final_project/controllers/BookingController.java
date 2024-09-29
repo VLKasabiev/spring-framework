@@ -2,7 +2,6 @@ package com.example.spring_framework_final_project.controllers;
 
 import com.example.spring_framework_final_project.entities.Booking;
 import com.example.spring_framework_final_project.kafka.event.BookingEvent;
-import com.example.spring_framework_final_project.kafka.event.CreateUserEvent;
 import com.example.spring_framework_final_project.mapper.booking.BookingMapper;
 import com.example.spring_framework_final_project.model.booking.BookingResponse;
 import com.example.spring_framework_final_project.model.booking.UpsertBookingRequest;

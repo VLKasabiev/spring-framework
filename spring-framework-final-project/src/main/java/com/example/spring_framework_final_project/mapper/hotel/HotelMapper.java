@@ -19,7 +19,7 @@ public interface HotelMapper {
     default Hotel toHotel(UpsertHotelRequest request) {
         Hotel hotel = requestToHotel(request);
         hotel.setNumberOfRatings(0L);
-        hotel.setRating(0.0); // Устанавливаем значение по умолчанию здесь
+        hotel.setRating(0.0);
         return hotel;
     }
 
@@ -27,5 +27,14 @@ public interface HotelMapper {
         Hotel hotel = toHotel(request);
         hotel.setId(hotelId);
         return hotel;
+    }
+
+    default HotelResponse toResponse(Hotel hotel) {
+        HotelResponse response = hotelToResponse(hotel);
+        if (response.getNumberOfRatings() >= 2) {
+            response.setNumberOfRatings(response.getNumberOfRatings() - 1);
+        }
+
+        return response;
     }
 }

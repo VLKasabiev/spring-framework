@@ -6,15 +6,14 @@ import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.parameters.P;
 
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpsertRoomRequest {
-    @NotBlank(message = "Имя комнаты должно быть указано!")
-    private String name;
+    @NotBlank(message = "Название комнаты должно быть указано!")
+    private String title;
     @NotBlank(message = "Описание комнаты должно быть заполнено!")
     private String description;
     @NotNull(message = "Номер комнаты должен быть заполнен!")

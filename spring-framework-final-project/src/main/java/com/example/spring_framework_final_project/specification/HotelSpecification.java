@@ -1,9 +1,7 @@
 package com.example.spring_framework_final_project.specification;
 
 import com.example.spring_framework_final_project.entities.Hotel;
-import com.example.spring_framework_final_project.entities.Room;
 import com.example.spring_framework_final_project.filters.HotelFilter;
-import com.example.spring_framework_final_project.filters.RoomFilter;
 import org.springframework.data.jpa.domain.Specification;
 
 public interface HotelSpecification {
@@ -68,7 +66,7 @@ public interface HotelSpecification {
         };
     }
 
-    static Specification<Hotel> byDistanceFromCentre(Integer maxDistanceFromCentre) {
+    static Specification<Hotel> byDistanceFromCentre(Double maxDistanceFromCentre) {
         return (root, query, criteriaBuilder) -> {
             if (maxDistanceFromCentre == null) {
                 return null;

@@ -2,12 +2,10 @@ package com.example.spring_framework_final_project.controllers;
 
 import com.example.spring_framework_final_project.entities.Hotel;
 import com.example.spring_framework_final_project.filters.HotelFilter;
-import com.example.spring_framework_final_project.filters.RoomFilter;
 import com.example.spring_framework_final_project.mapper.hotel.HotelMapper;
 import com.example.spring_framework_final_project.model.hotel.HotelResponse;
 import com.example.spring_framework_final_project.model.hotel.UpsertHotelRequest;
 import com.example.spring_framework_final_project.model.hotel.UpsertRatingRequest;
-import com.example.spring_framework_final_project.model.room.RoomResponse;
 import com.example.spring_framework_final_project.services.HotelService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -82,6 +80,6 @@ public class HotelController {
     public ResponseEntity<HotelResponse> updateRating(@PathVariable Long id, @RequestBody UpsertRatingRequest request) {
         Hotel updatedHotel = hotelService.updateRating(id, request.getNewMark());
 
-        return ResponseEntity.ok(hotelMapper.hotelToResponse(updatedHotel));
+        return ResponseEntity.ok(hotelMapper.toResponse(updatedHotel));
     }
 }

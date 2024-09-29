@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -25,15 +24,11 @@ public class BookingService {
         return bookingRepository.findAll();
     }
     public Booking roomBooking(Booking booking) {
-        log.info("Room unDates size: " + booking.getRoom().getUnavailableDates().size());
-        log.info("Booking ID: " + booking.getId());
-        log.info("Room ID in roomBookingMethod: " + booking.getRoom().getId());
         if (checkDates(booking.getRoom(), booking.getArrivalDate(), booking.getDepartureDate())) {
             UnavailableDate newDate = new UnavailableDate();
             newDate.setArrivalDate(booking.getArrivalDate());
             newDate.setDepartureDate(booking.getDepartureDate());
             newDate.setRoom(booking.getRoom());
-//            Room room = booking.getRoom();
             booking.getRoom().addUnavailableDate(newDate);
             roomRepository.save(booking.getRoom());
             return bookingRepository.save(booking);

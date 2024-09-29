@@ -1,7 +1,5 @@
 package com.example.spring_framework_final_project.model.hotel;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -23,5 +21,5 @@ public class UpsertHotelRequest {
     private String address;
     @NotNull(message = "Дистанция от центра должна быть указана!")
     @Positive(message = "Дистаеция от центра должна быть больше 0!")
-    private Integer distanceFromCentre;
+    private Double distanceFromCentre;
 }

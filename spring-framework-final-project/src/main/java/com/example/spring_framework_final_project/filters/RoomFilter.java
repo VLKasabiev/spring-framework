@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @RoomFilterValid
 public class RoomFilter {
     private Long id;
-    private String name;
+    private String title;
     private Long maxCost;
     private Long minCost;
     private Long maxOccupancy;

@@ -1,13 +1,10 @@
 package com.example.spring_framework_final_project.services;
 
 import com.example.spring_framework_final_project.entities.Hotel;
-import com.example.spring_framework_final_project.entities.Room;
 import com.example.spring_framework_final_project.exceptions.EntityNotFoundException;
 import com.example.spring_framework_final_project.filters.HotelFilter;
-import com.example.spring_framework_final_project.filters.RoomFilter;
 import com.example.spring_framework_final_project.repositories.HotelRepository;
 import com.example.spring_framework_final_project.specification.HotelSpecification;
-import com.example.spring_framework_final_project.specification.RoomSpecification;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -56,9 +53,9 @@ public class HotelService {
     }
 
     private Hotel calculateTotalRating(Hotel hotel, Long newMark) {
-
         if (hotel.getNumberOfRatings() == 0) {
             hotel.setRating(newMark.doubleValue());
+            hotel.setNumberOfRatings(1L);
         } else {
             Double totalRating = hotel.getRating() * hotel.getNumberOfRatings();
             totalRating = totalRating - hotel.getRating() + newMark.doubleValue();

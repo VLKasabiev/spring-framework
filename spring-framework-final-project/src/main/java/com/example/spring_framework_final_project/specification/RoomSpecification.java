@@ -12,7 +12,7 @@ public interface RoomSpecification {
 
     static Specification<Room> withFilter(RoomFilter filter) {
         return Specification.where(byId(filter.getId()))
-                .and(byName(filter.getName()))
+                .and(byName(filter.getTitle()))
                 .and(byCostRange(filter.getMinCost(), filter.getMaxCost()))
                 .and(byMaxOccupancy(filter.getMaxOccupancy()))
                 .and(byDate(filter.getArrivalDate(), filter.getDepartureDate()))
@@ -29,13 +29,13 @@ public interface RoomSpecification {
         };
     }
 
-    static Specification<Room> byName(String name) {
+    static Specification<Room> byName(String title) {
         return (root, query, criteriaBuilder) -> {
-            if (name == null) {
+            if (title == null) {
                 return null;
             }
 
-            return criteriaBuilder.equal(root.get("name"), name);
+            return criteriaBuilder.equal(root.get("title"), title);
         };
     }
 

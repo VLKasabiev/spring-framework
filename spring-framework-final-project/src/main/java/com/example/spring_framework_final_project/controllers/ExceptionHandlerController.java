@@ -40,11 +40,11 @@ public class ExceptionHandlerController {
                 .body(new ErrorResponse(errorMessage));
     }
 
-//    @ExceptionHandler(Exception.class)
-//    public ResponseEntity<ErrorResponse> handleAllExceptions(Exception ex) {
-//        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-//                .body(new ErrorResponse(ex.getLocalizedMessage()));
-//    }
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> handleAllExceptions(Exception ex) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(new ErrorResponse(ex.getLocalizedMessage()));
+    }
 
     @ExceptionHandler(BookingUnavailable.class)
     public ResponseEntity<ErrorResponse> dateNotAvailable(BookingUnavailable ex) {
